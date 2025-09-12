@@ -1,3 +1,7 @@
+// =================================================================
+// LAGER 2: REPOSITORY LAYER (Data Access)
+// =================================================================
+
 package se.hatice.backend.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,5 +14,6 @@ import java.util.List;
 public interface ItemRepository extends JpaRepository<Item, Long> {
 
     List<Item> findByNameContainingIgnoreCase(String name);
+
     List<Item> findByQuantityLessThan(Integer quantity);
 }

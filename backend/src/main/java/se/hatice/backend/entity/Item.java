@@ -1,3 +1,7 @@
+// =================================================================
+// LAGER 1: ENTITY LAYER (Data Model)
+// =================================================================
+
 package se.hatice.backend.entity;
 
 import jakarta.persistence.*;
