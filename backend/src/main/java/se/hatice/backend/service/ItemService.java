@@ -17,12 +17,10 @@ public class ItemService {
 
     private ItemRepository itemRepository;
 
-    // Create
     public Item createItem(Item item) {
         return itemRepository.save(item);
     }
 
-    // Read
     public List<Item> getAllItems() {
         return itemRepository.findAll();
     }
@@ -36,7 +34,6 @@ public class ItemService {
                 .orElseThrow(() -> new RuntimeException("Artikel med id " + id + " hittades inte"));
     }
 
-    // Update
     @Transactional
     public Item updateQuantity(Long id, Integer newQuantity) {
         if (newQuantity < 0) {
@@ -47,7 +44,6 @@ public class ItemService {
         return itemRepository.save(item);
     }
 
-    // Delete
     public void deleteItem(Long id) {
         Item item = getItemById(id);
         itemRepository.delete(item);
