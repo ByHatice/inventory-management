@@ -15,9 +15,13 @@ import java.util.List;
 @CrossOrigin
 public class ItemController {
 
-    private ItemService itemService;
+    private final ItemService itemService;
 
-    @PostMapping("/add")
+    public ItemController(ItemService itemService) {
+        this.itemService = itemService;
+    }
+
+    @PostMapping
     public Item createItem(@RequestBody Item item) {
         return itemService.createItem(item);
     }
@@ -27,12 +31,17 @@ public class ItemController {
         return itemService.getAllItems();
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
+    public Item getItemById(@PathVariable Long id) {
+        return itemService.getItemById(id);
+    }
+
+    @GetMapping("/search")
     public List<Item> searchItems(@RequestParam String searchTerm) {
         return itemService.searchItems(searchTerm);
     }
 
-    @GetMapping
+    @GetMapping("/low-stock")
     public List<Item> getLowStockItems() {
         return itemService.getAllItems().stream()
                 .filter(item -> item.getQuantity() < 5)
