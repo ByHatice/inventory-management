@@ -15,7 +15,11 @@ import java.util.List;
 @Service
 public class ItemService {
 
-    private ItemRepository itemRepository;
+    private final ItemRepository itemRepository;
+
+    public ItemService(ItemRepository itemRepository) {
+        this.itemRepository = itemRepository;
+    }
 
     public Item createItem(Item item) {
         return itemRepository.save(item);

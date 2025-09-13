@@ -4,6 +4,7 @@
 
 package se.hatice.backend.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import se.hatice.backend.entity.Item;
 import se.hatice.backend.service.ItemService;
@@ -22,7 +23,7 @@ public class ItemController {
     }
 
     @PostMapping
-    public Item createItem(@RequestBody Item item) {
+    public Item createItem(@Valid @RequestBody Item item) {
         return itemService.createItem(item);
     }
 
@@ -42,9 +43,9 @@ public class ItemController {
     }
 
     @GetMapping("/low-stock")
-    public List<Item> getLowStockItems() {
+    public List<Item> getLowStockItems(@RequestParam(defaultValue = "10") Integer threshold) {
         return itemService.getAllItems().stream()
-                .filter(item -> item.getQuantity() < 5)
+                .filter(item -> item.getQuantity() < threshold)
                 .toList();
     }
 
