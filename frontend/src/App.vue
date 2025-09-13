@@ -1,30 +1,31 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup lang="ts">
+import { ref } from 'vue'
+import { BApp } from 'bootstrap-vue-next'
+
+const showAlert = ref<boolean>(true)
+const showModal = ref<boolean>(false)
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-</template>
+  <BApp>
+    <div class="container mt-4">
+      <h1>BootstrapVueNext Test</h1>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+      <BButton variant="primary" @click="showAlert = !showAlert" class="me-2">
+        Toggle Alert
+      </BButton>
+
+      <BButton variant="danger" @click="showModal = true">
+        Visa Modal
+      </BButton>
+
+      <BAlert v-model="showAlert" variant="success" class="mt-3">
+        Det fungerar! 🎉
+      </BAlert>
+
+      <BModal v-model="showModal" title="Test Modal">
+        Bootstrap Modal fungerar också!
+      </BModal>
+    </div>
+  </BApp>
+</template>
