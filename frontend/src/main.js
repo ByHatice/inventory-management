@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import './assets/navbar.css'
-
-const app = createApp(App)
+import './assets/footer.css'
 
 createApp(App).use(router).mount('#app')

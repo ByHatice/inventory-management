@@ -1,0 +1,35 @@
+.footer {
+    background-color: #212529; /* Samma som Bootstrap bg-dark */
+    color: #fff;
+    padding: 6px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.footer p {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+}
+
+@media (min-width: 401px) {
+    .footer {
+        padding: 8px 0;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 577px) {
+    .footer {
+        padding: 10px 0;
+    }
+
+    .footer p {
+        font-size: 1rem;
+    }
+}

@@ -1,26 +1,4 @@
-<script>
-export default {
-  name: 'NavBar',
-  data() {
-    return {
-      searchTerm: '',
-      navbarOpen: false
-    }
-  },
-  methods: {
-    handleSearch() {
-      this.$root.$emit('navbar-search', this.searchTerm)
-    },
-    toggleNavbar() {
-      this.navbarOpen = !this.navbarOpen
-    }
-  }
-}
-</script>
-
-
 <template>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-2">
     <router-link to="/itmes" class="navbar-brand">
       <span class="ms-2">Lagerhantering</span>
@@ -62,5 +40,24 @@ export default {
       </form>
     </div>
   </nav>
-  <!-- End Navbar -->
 </template>
+
+<script>
+export default {
+  name: 'NavBar',
+  data() {
+    return {
+      searchTerm: '',
+      navbarOpen: false
+    }
+  },
+  methods: {
+    handleSearch() {
+      this.$root.$emit('navbar-search', this.searchTerm)
+    },
+    toggleNavbar() {
+      this.navbarOpen = !this.navbarOpen
+    }
+  }
+}
+</script>
