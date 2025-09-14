@@ -17,11 +17,6 @@
     <div class="collapse navbar-collapse p-2" :class="{ show: navbarOpen }">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <router-link to="/" class="nav-link" :class="{ active: $route.path === '/' }">
-           Justera antal
-          </router-link>
-        </li>
-        <li class="nav-item">
           <router-link to="/add" class="nav-link" :class="{ active: $route.path === '/add' }">
             Lägg till artikel
           </router-link>

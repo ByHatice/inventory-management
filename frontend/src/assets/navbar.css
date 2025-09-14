@@ -3,8 +3,13 @@
 }
 
 .navbar-brand {
+    font-size: 1.8rem; /* Större än standard 1.25rem */
     font-weight: 700;
-    font-size: 1.5rem;
+}
+
+
+.navbar-nav {
+    margin-left: 3rem; /* Ökar avståndet */
 }
 
 .nav-link {
