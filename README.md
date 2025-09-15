@@ -71,7 +71,6 @@ The frontend will start on `http://localhost:5173`
 
 ### Items
 - `GET /all` - Get all items
-- `GET /item` - Get item by ID
 - `GET /low-stock` - Get low stock items
 - `POST /create` - Create new item
 - `PUT /update` - Update item quantity
