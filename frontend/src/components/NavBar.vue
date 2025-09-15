@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-2">
-    <router-link to="/itmes" class="navbar-brand">
+    <router-link to="/" class="navbar-brand">
       <span class="ms-2">Lagerhantering</span>
     </router-link>
 
@@ -30,6 +30,8 @@
             type="search"
             placeholder="Sök artiklar..."
             aria-label="Search"
+            id="search-input"
+            name="search"
         >
         <button class="btn btn-outline-light" type="submit">Sök</button>
       </form>

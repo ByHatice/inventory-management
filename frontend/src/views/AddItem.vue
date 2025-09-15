@@ -17,9 +17,9 @@
                   <input
                       v-model="form.name"
                       id="name"
+                      name="itemName"
                       type="text"
                       class="form-control"
-                      :class="{ 'is-invalid': errors.name }"
                       placeholder="t.ex. Munskydd"
                       required
                   />
@@ -33,9 +33,9 @@
                   <input
                       v-model.number="form.quantity"
                       id="quantity"
+                      name="itemQuantity"
                       type="number"
                       class="form-control"
-                      :class="{ 'is-invalid': errors.quantity }"
                       placeholder="200"
                       min="0"
                       required
@@ -50,9 +50,9 @@
                   <input
                       v-model="form.unit"
                       id="unit"
+                      name="itemUnit"
                       type="text"
                       class="form-control"
-                      :class="{ 'is-invalid': errors.unit }"
                       placeholder="st, kg, liter, etc."
                       required
                   />

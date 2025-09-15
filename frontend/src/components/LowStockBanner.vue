@@ -26,12 +26,13 @@
             </div>
           </div>
           <div class="quick-update mt-2">
-            <label class="form-label small mb-1">Nytt antal:</label>
             <div class="input-group input-group-sm">
               <input
                   v-model.number="updateInputs[item.id]"
                   type="number"
                   class="form-control"
+                  :id="`quantity-${item.id}`"
+                  :name="`quantity-${item.id}`"
                   :placeholder="item.quantity"
                   min="0"
               />
