@@ -29,10 +29,6 @@ public class ItemService {
         return itemRepository.findAll();
     }
 
-    public List<Item> searchItems(String searchTerm) {
-        return itemRepository.findByNameContainingIgnoreCase(searchTerm);
-    }
-
     public Item getItemById(Long id) {
         return itemRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Artikel med id " + id + " hittades inte"));

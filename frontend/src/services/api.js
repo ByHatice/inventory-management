@@ -41,22 +41,6 @@ class ApiService {
             throw new Error('Misslyckades med att radera artikel')
         }
     }
-
-    async searchItems(searchTerm) {
-        const response = await fetch(`${API_BASE_URL}/search?searchTerm=${encodeURIComponent(searchTerm)}`)
-        if (!response.ok) {
-            throw new Error('Kunde inte hämta sökresultat')
-        }
-        return await response.json()
-    }
-
-    async getLowStockItems(threshold = 10) {
-        const response = await fetch(`${API_BASE_URL}/low-stock?threshold=${threshold}`)
-        if (!response.ok) {
-            throw new Error('Det gick inte att hämta artiklar med lågt saldo')
-        }
-        return await response.json()
-    }
 }
 
 export default new ApiService()

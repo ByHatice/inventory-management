@@ -28,25 +28,11 @@
                   <!-- Redigeringsläge -->
                   <div class="mb-2">
                     <input
-                        v-model="editForm.name"
-                        class="form-control form-control-sm"
-                        placeholder="Artikelnamn"
-                    >
-                  </div>
-                  <div class="mb-2">
-                    <input
                         v-model.number="editForm.quantity"
                         type="number"
                         class="form-control form-control-sm"
                         placeholder="Antal"
                         min="0"
-                    >
-                  </div>
-                  <div class="mb-2">
-                    <input
-                        v-model="editForm.unit"
-                        class="form-control form-control-sm"
-                        placeholder="Enhet"
                     >
                   </div>
                   <div class="d-flex gap-2">

@@ -32,15 +32,6 @@ public class ItemController {
         return itemService.getAllItems();
     }
 
-    @GetMapping("/item")
-    public Item getItemById(@RequestParam Long id) {
-        return itemService.getItemById(id);
-    }
-
-    @GetMapping("/search")
-    public List<Item> searchItems(@RequestParam String searchTerm) {
-        return itemService.searchItems(searchTerm);
-    }
 
     @GetMapping("/low-stock")
     public List<Item> getLowStockItems(@RequestParam(defaultValue = "10") Integer threshold) {
