@@ -22,7 +22,7 @@ const router = createRouter({
       component: NavBar
     },
     {
-      path: '/{id}/products',
+      path: '/items/products',
         name: 'product',
         component: NavBar
     }

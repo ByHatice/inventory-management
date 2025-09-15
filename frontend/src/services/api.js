@@ -2,7 +2,7 @@ const API_BASE_URL = 'http://localhost:8080'
 
 class ApiService {
     async getAllItems() {
-        const response = await fetch(`${API_BASE_URL}/items`)
+        const response = await fetch(`${API_BASE_URL}/all`)
         if (!response.ok) {
             throw new Error('Misslyckades att ladda artiklar')
         }
@@ -10,7 +10,7 @@ class ApiService {
     }
 
     async createItem(item) {
-        const response = await fetch(`${API_BASE_URL}/items`, {
+        const response = await fetch(`${API_BASE_URL}/create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ class ApiService {
     }
 
     async updateQuantity(id, quantity) {
-        const response = await fetch(`${API_BASE_URL}/items/${id}/quantity?quantity=${quantity}`, {
+        const response = await fetch(`${API_BASE_URL}/update?id=${id}&quantity=${quantity}`, {
             method: 'PUT',
         })
         if (!response.ok) {
@@ -34,7 +34,7 @@ class ApiService {
     }
 
     async deleteItem(id) {
-        const response = await fetch(`${API_BASE_URL}/items/${id}`, {
+        const response = await fetch(`${API_BASE_URL}/delete?id=${id}`, {
             method: 'DELETE',
         })
         if (!response.ok) {
@@ -43,15 +43,15 @@ class ApiService {
     }
 
     async searchItems(searchTerm) {
-        const response = await fetch(`${API_BASE_URL}/items/search?searchTerm=${encodeURIComponent(searchTerm)}`)
+        const response = await fetch(`${API_BASE_URL}/search?searchTerm=${encodeURIComponent(searchTerm)}`)
         if (!response.ok) {
-            throw new Error('Kunde inte hämta sökresulta')
+            throw new Error('Kunde inte hämta sökresultat')
         }
         return await response.json()
     }
 
     async getLowStockItems(threshold = 10) {
-        const response = await fetch(`${API_BASE_URL}/items/low-stock?threshold=${threshold}`)
+        const response = await fetch(`${API_BASE_URL}/low-stock?threshold=${threshold}`)
         if (!response.ok) {
             throw new Error('Det gick inte att hämta artiklar med lågt saldo')
         }
