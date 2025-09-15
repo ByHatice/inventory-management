@@ -12,7 +12,7 @@ import se.hatice.backend.service.ItemService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/items")
+@RequestMapping
 @CrossOrigin
 public class ItemController {
 
@@ -22,18 +22,18 @@ public class ItemController {
         this.itemService = itemService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Item createItem(@Valid @RequestBody Item item) {
         return itemService.createItem(item);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Item> getAllItems() {
         return itemService.getAllItems();
     }
 
-    @GetMapping("/{id}")
-    public Item getItemById(@PathVariable Long id) {
+    @GetMapping("/item")
+    public Item getItemById(@RequestParam Long id) {
         return itemService.getItemById(id);
     }
 
@@ -49,13 +49,13 @@ public class ItemController {
                 .toList();
     }
 
-    @PutMapping("/{id}/quantity")
-    public Item updateQuantity(@PathVariable Long id, @RequestParam Integer quantity) {
+    @PutMapping("/update")
+    public Item updateQuantity(@RequestParam Long id, Integer quantity) {
         return itemService.updateQuantity(id, quantity);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteItem(@PathVariable Long id) {
+    @DeleteMapping("/delete")
+    public void deleteItem(@RequestParam Long id) {
         itemService.deleteItem(id);
     }
 }
