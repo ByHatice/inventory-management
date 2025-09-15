@@ -3,6 +3,7 @@
 }
 
 .navbar-brand {
+    padding-right: 35rem; /* Ökar avståndet */
     font-size: 1.5rem; /* Större än standard 1.25rem */
     font-weight: 700;
 }

@@ -67,7 +67,7 @@
                         @click="startEdit(item)"
                         class="btn btn-sm btn-outline-primary"
                     >
-                      Redigera
+                      Redigera antal
                     </button>
                     <button
                         @click="deleteItem(item.id)"
